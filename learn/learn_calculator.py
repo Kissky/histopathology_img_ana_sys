@@ -124,7 +124,6 @@ class Example3(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
-
         text_edit = QTextEdit()
         self.setCentralWidget(text_edit)
 
@@ -133,11 +132,18 @@ class Example3(QMainWindow):
         exit_act.setStatusTip('Exit application')
         exit_act.triggered.connect(self.close)
 
+        self.statusBar()
+
         menu_bar = self.menuBar()
         file_menu = menu_bar.addMenu('&File')
+        file_menu.addAction(exit_act)
 
-def
+        tool_bar = self.addToolBar('&Exit')
+        tool_bar.addAction(exit_act)
 
+        self.setGeometry(1000, 300, 350, 250)
+        self.setWindowTitle('Main')
+        self.show()
 
 
 if __name__ == '__main__':
